@@ -30,13 +30,13 @@ const mostLikes = (blogs) => {
   authorsandlikes = {}
   for (let blog in blogs) {
     let current = blogs[blog].author
-    console.log(current)
+    
     if (current in authorsandlikes){
       authorsandlikes[current] += blogs[blog].likes
-      console.log(authorsandlikes)
+    
     } else {
       authorsandlikes[current] = blogs[blog].likes
-      console.log(authorsandlikes)
+    
     }
   }
   return Object.keys(authorsandlikes).reduce(function(a, b){ return authorsandlikes[a] > authorsandlikes[b] ? a : b })
